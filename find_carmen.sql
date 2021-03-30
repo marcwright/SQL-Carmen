@@ -22,6 +22,15 @@ WHERE countrycode = 'VAT';
 -- to a different country, a country where people speak only the language she was learning. Find out which
 --  nearby country speaks nothing but that language.
 
+SELECT countrycode
+FROM countrylanguage
+WHERE language = 'Italian'
+ORDER BY percentage DESC;
+
+SELECT *
+FROM country
+WHERE code = 'SMR';
+
 
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time.
