@@ -15,4 +15,10 @@ WHERE code = (SELECT countrycode FROM countrylanguage
 SELECT name from city
 WHERE countrycode = 'SMR'
 AND name != 'San Marino';
+
+SELECT * FROM city
+WHERE name LIKE 'Serra%'
+AND countrycode IN(
+SELECT code FROM country
+WHERE region = 'South America');
 					
