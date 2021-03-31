@@ -7,3 +7,8 @@ WHERE isofficial = true
 AND countrycode = (SELECT code FROM country 
 					WHERE name LIKE '%Holy See%');
 					
+SELECT name FROM country
+WHERE code = (SELECT countrycode FROM countrylanguage
+			  WHERE language = 'Italian' 
+			  AND percentage = 100);
+					
