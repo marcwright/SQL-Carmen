@@ -7,8 +7,12 @@ WHERE isofficial = true
 AND countrycode = (SELECT code FROM country 
 					WHERE name LIKE '%Holy See%');
 					
-SELECT name FROM country
+SELECT name, code AS neededcode FROM country
 WHERE code = (SELECT countrycode FROM countrylanguage
 			  WHERE language = 'Italian' 
 			  AND percentage = 100);
+
+SELECT name from city
+WHERE countrycode = 'SMR'
+AND name != 'San Marino';
 					
