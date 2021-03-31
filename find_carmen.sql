@@ -14,7 +14,8 @@ WHERE region = 'Southern Europe' and population > 0);
 -- this country's officially recognized language. Check our databases and find out what language is
 -- spoken in this country, so we can call in a translator to work with you.
 
-SELECT language INTO selectedlanguage from countrylanguage, hidingplace where countrylanguage.countrycode = hidingplace.code;
+SELECT language INTO selectedlanguage FROM countrylanguage, hidingplace 
+WHERE countrylanguage.countrycode = hidingplace.code;
 
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on
@@ -27,8 +28,8 @@ FROM countrylanguage GROUP BY countrycode;
 
 -- find countrycodes that only show up once in countrylanguage
 SELECT countrycode INTO onelanguagecountries
-from countcountrycode
-where countcountrycode.count = 1;
+FROM countcountrycode
+WHERE countcountrycode.count = 1;
 
 -- find countries that speaks Italian and only Italian
 SELECT country.name, country.code, countrylanguage.language INTO newhidingplace
@@ -63,8 +64,8 @@ AND city.countrycode = country.code AND city.name LIKE ('Serra%');
  -- follow right behind you!
 
 SELECT country.capital, city.name INTO brazilcapital
-from country, city, newcountry 
-where country.name = newcountry.countryname AND city.id = country.capital;
+FROM country, city, newcountry 
+WHERE country.name = newcountry.countryname AND city.id = country.capital;
 
 
 
@@ -84,7 +85,7 @@ where country.name = newcountry.countryname AND city.id = country.capital;
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 
 SELECT city.name, city.population, country.name 
-from city, country where city.population = 91000 and city.countrycode = country.code;
+FROM city, country WHERE city.population = 91000 AND city.countrycode = country.code;
 
 
 -- She's in _Krasnogorsk_______!
