@@ -21,4 +21,8 @@ WHERE name LIKE 'Serra%'
 AND countrycode IN(
 SELECT code FROM country
 WHERE region = 'South America');
+
+SELECT name FROM city
+WHERE id = (SELECT capital FROM country
+WHERE code = 'BRA');
 					
