@@ -54,7 +54,9 @@ SELECT country.capital FROM country WHERE code = 'ARG';
 
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
+SELECT city.name FROM city
+WHERE population = 91084;
 
 
 
--- She's in ____________________________!
+-- She's in ___________Santa Monica_________________!
